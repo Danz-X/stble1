@@ -22,7 +22,7 @@ def push_rank():
 			juara = 2
 		else:
 			juara = 3
-		req = requests.get('http://kitkabackend.eastus.cloudapp.azure.com:5010/round/finishv2/{}'.format(juara), headers=headers)
+		req = requests.get('http://kitkabackend.eastus.cloudapp.azure.com:5010/round/finishv2/2{}'.format(juara), headers=headers)
 		response = json.loads(req.text)
 		print('[{}-{}-{} {}:{}:{}] SUCCESS |TROPI: {} |MAHKOTA: {}'.format(jam.year, jam.month, jam.day, jam.hour, jam.minute, jam.second, response['User']['SkillRating'], response['User']['Crowns']))
 		time.sleep(0.05)
